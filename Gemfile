@@ -45,3 +45,8 @@ group :development do
   gem 'spring'
 end
 
+# Позволяем рельсам использовать БД PostgreSQL для развертывания в Heroku
+group :production do
+	gem 'pg'
+	gem 'rails_12factor' # гем для работы со статическими ассетами (изображения и таблицы стилей)
+end
