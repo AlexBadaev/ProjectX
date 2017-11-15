@@ -1,0 +1,20 @@
+<%= render 'layouts/scrip' %>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<% provide(:title, 'Sign in') %>
+<div class="login-page">
+<div class="form">
+    <p style="color:black; font-size:14px ">Пожалуйста войдите</p>
+    <%= form_tag('signin', :method => "post", :class => "login-form") do  %>
+        <%= text_field_tag(:login ,nil,placeholder: 'Логин') %>
+        <%= password_field_tag(:password ,nil,placeholder: 'Пароль') %>
+      <p >
+      <div  class="g-recaptcha" data-sitekey="6LdQKwoUAAAAALL_V1TeAxtVwaXcnjeALX06vBcu"  style="transform:scale(0.88);-webkit-transform:scale(0.89);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+      <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha" id="hiddenRecaptcha">
+      </p>
+        <%= submit_tag( "Войти", class: "button") %>
+    <% end %>
+    <p class="message">Не зарегистрированы?<%= link_to ' Зарегистрироваться!', signup_path, method: :get %></p>
+</div>
+</div>
+
+

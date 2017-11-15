@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  about: MyText
+  type_system: 1
+  tegs: 1
+  largeabout: MyText
+  listtodo: MyText
+  authors: MyText
+
+two:
+  name: MyString
+  about: MyText
+  type_system: 1
+  tegs: 1
+  largeabout: MyText
+  listtodo: MyText
+  authors: MyText

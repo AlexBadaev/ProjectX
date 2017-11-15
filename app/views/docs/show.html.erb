@@ -1,0 +1,67 @@
+<%= render 'layouts/scripuser' %>
+<div class="page-content inset" style="margin-left: 20%;margin-right: 20%;margin-top: 7%;">
+<div class="row">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+        <th>№</th>
+        <th>Названия </th>
+        <th>Краткое описания</th>
+        <th>Теги</th>
+        <th>Авторы</th>
+        <th>Действия</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%      
+      @doc.each do |cat| %>
+        <tr>
+          <td>
+            <abbr title="Редактировать">
+              <h5>
+                <%=
+                   cat.id
+                    %>
+              </h5>
+            </abbr>
+          </td>
+          <td>
+            <abbr title="<%= cat.name %>">
+              <h5>
+                <%= cat.name[0..15] %>
+              </h5>
+            </abbr>
+          </td>
+		<td>
+            <abbr title="<%= cat.about %>">
+              <h5>
+                <%= cat.about[0..15] %>
+              </h5>
+            </abbr>
+          </td>
+          <td>
+            <abbr title="<%= cat.tegs %>">
+              <h5>
+                <%= cat.tegs %>
+              </h5>
+            </abbr>
+          </td>
+          <td>
+            <abbr title="<%= cat.authors %>">
+              <h5>
+                <%= cat.authors %>                
+              </h5>
+            </abbr>
+          </td>
+
+          <td>
+            <h5>
+              <%= link_to  "Удалить" ,"/docdel#{cat.id}", method: :delete, data: { confirm: 'Вы уверены?' }  %>
+            </h5>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+</div>

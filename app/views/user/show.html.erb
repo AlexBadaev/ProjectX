@@ -1,0 +1,59 @@
+<%= render 'layouts/scripuser' %>
+<div class="page-content inset" style="margin-left: 20%;margin-right: 20%;margin-top: 7%;">
+<div class="row">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+        <th>№</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Логин</th>        
+        <th>Действия</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%      
+      @user.each do |cat| %>
+        <tr>
+          <td>
+            <abbr title="Редактировать">
+              <h5>
+                <%=
+                   cat.id
+                    %>
+              </h5>
+            </abbr>
+          </td>
+          <td>
+            <abbr title="<%= cat.fname %>">
+              <h5>
+                <%= cat.fname[0..15] %>
+              </h5>
+            </abbr>
+          </td>
+          
+		<td>
+            <abbr title="<%= cat.lastname %>">
+              <h5>
+                <%= cat.lastname[0..15] %>
+              </h5>
+            </abbr>
+          </td>
+          <td>
+            <abbr title="<%= cat.login %>">
+              <h5>
+                <%= cat.login %>
+              </h5>
+            </abbr>
+          </td>
+           <td>
+            <h5>
+              <%= link_to  "Удалить" ,"/docdel#{cat.id}", method: :delete, data: { confirm: 'Вы уверены?' }  %>
+            </h5>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+</div>

@@ -1,0 +1,28 @@
+<%= render 'layouts/scripuser' %>
+<div class="login-page">
+    <div class="form">
+      <p style="color:black; font-size:14px ">Введите данные коректно</p>
+          <%= form_for(@doc,  url:'/new_doc', class: "register-form" ) do |f| %>
+          <%= f.text_field :name ,placeholder: 'Названия' %>
+          <%= f.text_field :about ,placeholder: 'Краткое описания'%>          
+          <select name="type_system">
+            <option value="">Тип системы</option>
+            <option value="1">Рельный</option>
+            <option value="1">Виртуальный</option>
+          </select>
+          <%= f.text_field :tegs  ,placeholder: 'Перечислете теги через запьятую'%> 
+          <textarea name="largeabout">
+            Подробное описания системы
+          </textarea>
+          <textarea name="listtodo">
+            Список задач 
+          </textarea>
+          <textarea name="authors">
+            Список авторов
+          </textarea>          
+          </p>                    
+          <%= f.submit'Добавить', class: "button" %>
+      <% end %>
+      
+  </div>
+</div>
